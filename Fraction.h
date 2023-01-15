@@ -4,11 +4,8 @@
 class Fraction
 {
 public:
-	Fraction(){}
 	Fraction(int Numerator, int Determinator);
 	Fraction(const Fraction& other);
-
-	~Fraction(){}
 
 	void FractionPrint();
 
