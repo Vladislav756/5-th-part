@@ -1,9 +1,7 @@
 #include "Complex.h"
 #include <iostream>
 
-Complex::Complex(double real)
-{
-	Real = real;
+Complex::Complex(double real): Complex(real, 0.0);
 }
 
 Complex::Complex(double real, double imaginary)
