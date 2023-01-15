@@ -17,7 +17,7 @@ Fraction::Fraction(const Fraction& other)
 
 void Fraction::FractionPrint()
 {
-	std::cout << " Numerator is " << Numerator << " Determinator is " << Determinator << " Fraction is " << Numerator << "/" << Determinator << "\n"; //<< "Rational Number is " << rational_number;
+	std::cout << " Numerator is " << Numerator << " Determinator is " << Determinator << " Fraction is " << Numerator << "/" << Determinator << "\n";
 }
 
 Fraction Fraction::operator=(const Fraction& other)
@@ -34,23 +34,17 @@ Fraction Fraction::operator+(const Fraction& other)
 
 	int denominator = 0;
 
-	
-	
-	if (Determinator > other.Determinator)
+	if (Determinator == other.Determinator)
 	{
-		temp.Determinator = Determinator;
+		temp.Numerator = Numerator + other.Numerator;
 
-		denominator = Determinator / other.Determinator;
-
-		temp.Numerator = Numerator + (other.Numerator * denominator);
+		denominator = Determinator;
 	}
 	else
 	{
-		temp.Determinator = other.Determinator;
+		temp.Determinator = Determinator * other.Determinator;
 
-		denominator = other.Determinator / Determinator;
-
-		temp.Numerator = other.Numerator + (Numerator * denominator);
+		temp.Numerator = (Numerator * other.Determinator) + (other.Numerator * Determinator);
 	}
 
 	return temp;
@@ -62,23 +56,17 @@ Fraction Fraction::operator-(const Fraction& other)
 
 	int denominator = 0;
 
-
-
-	if (Determinator > other.Determinator)
+	if (Determinator == other.Determinator)
 	{
-		temp.Determinator = Determinator;
+		temp.Numerator = Numerator - other.Numerator;
 
-		denominator = Determinator / other.Determinator;
-
-		temp.Numerator = Numerator - (other.Numerator * denominator);
+		denominator = Determinator;
 	}
 	else
 	{
-		temp.Determinator = other.Determinator;
+		temp.Determinator = Determinator * other.Determinator;
 
-		denominator = other.Determinator / Determinator;
-
-		temp.Numerator = other.Numerator - (Numerator * denominator);
+		temp.Numerator = (Numerator * other.Determinator) - (other.Numerator * Determinator);
 	}
 	return temp;
 }
