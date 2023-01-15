@@ -1,6 +1,4 @@
 #include "Fraction.h"
-#include <iostream>
-
 
 
 Fraction::Fraction( int numerator, int determinator)
